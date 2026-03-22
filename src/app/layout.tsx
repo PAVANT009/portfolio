@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import ThemeProvider from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const instagramSans = localFont({
+  variable: "--font-instagram-sans",
+  src: [
+    { path: "../../public/instagram-sans-2/Instagram Sans Light.ttf", weight: "300", style: "normal" },
+    { path: "../../public/instagram-sans-2/Instagram Sans.ttf", weight: "400", style: "normal" },
+    { path: "../../public/instagram-sans-2/Instagram Sans Medium.ttf", weight: "500", style: "normal" },
+    { path: "../../public/instagram-sans-2/Instagram Sans Bold.ttf", weight: "700", style: "normal" },
+    { path: "../../public/instagram-sans-2/Instagram Sans Headline.otf", weight: "800", style: "normal" },
+  ],
 });
 
 const geistMono = Geist_Mono({
@@ -25,9 +33,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${instagramSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
