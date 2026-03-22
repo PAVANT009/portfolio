@@ -11,7 +11,7 @@ export default function ProjectSection() {
   return (
     <DashedFrame className="w-full py-2" left={false} right={false} top={false}>
       <DashedFrame
-        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 justify-items-center items-start w-1/2 mx-auto"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 justify-items-center items-start w-[90%] sm:w-1/2 mx-auto"
         top={false}
         bottom={false}
       >

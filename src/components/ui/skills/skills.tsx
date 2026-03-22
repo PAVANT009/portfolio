@@ -8,7 +8,7 @@ export function SkillsSection() {
   return (
     <DashedFrame className="w-full py-2" left={false} right={false} top={false}>
         <DashedFrame
-        className="w-full max-w-1/2 mx-auto px-4 py-4"
+        className="w-[90%] sm:w-1/2 mx-auto px-4 py-4"
         top={false}
         bottom={false}
         >

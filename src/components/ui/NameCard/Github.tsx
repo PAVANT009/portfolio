@@ -5,7 +5,7 @@ import { GitHubCalendar } from "react-github-calendar";
 
 export default function Github() {
   return (
-        <div className="flex flex-col gap-3 overflow-auto max-w-[90%]">
+        <div className="flex flex-col gap-3 overflow-x-auto w-full">
           <div className="text-sm text-muted-foreground ">GitHub Contributions</div>
           <div className="overflow-x-auto">
             <GitHubCalendar

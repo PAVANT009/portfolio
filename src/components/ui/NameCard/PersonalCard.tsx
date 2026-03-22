@@ -49,11 +49,11 @@ export default function PersonalCard() {
   return (
    <DashedFrame className="w-full py-2" left={false} right={false} bottom={false}>
         <DashedFrame
-            className="grid grid-cols-[auto_1fr] items-center w-1/2 mx-auto px-2 py-4"
+            className="grid grid-cols-[auto_1fr] items-center w-[90%] sm:w-1/2 mx-auto px-2 py-4"
             top={false}
             bottom={false}
         >
-            <div className="flex flex-row justify-between w-160 h-17 ml-4">
+            <div className="flex flex-row justify-between w-150 h-17 ml-4">
                 <div className="flex flex-1 items-center gap-3">
                     <div className="border border-border p-2.5 rounded-md">
                         <Image src="/images/profile.png" alt="profile" width={60} height={60}/>

@@ -4,8 +4,8 @@ import DashedFrame from "../DashedFrame";
 export default function Contactme() {
   return (
         <DashedFrame className="w-full " left={false} right={false} top={false}>
-            <DashedFrame
-            className="w-full max-w-1/2 mx-auto "
+        <DashedFrame
+            className="w-[90%] sm:w-1/2 mx-auto "
             top={false}
             bottom={false}
             >
