@@ -4,9 +4,26 @@ import { Eye, SunDimIcon } from "lucide-react";
 import Image from "next/image";
 import DashedFrame from "@/components/ui/DashedFrame";
 import { useTheme } from "next-themes";
+import React from "react";
 
 export default function PersonalCard() {
   const { resolvedTheme, setTheme } = useTheme();
+  const [views, setViews] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    let mounted = true;
+    fetch("/api/views")
+      .then((res) => res.json())
+      .then((data) => {
+        if (mounted && typeof data?.count === "number") {
+          setViews(data.count);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      mounted = false;
+    };
+  }, []);
   const toggleTheme = () => {
     const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
 
@@ -38,13 +55,13 @@ export default function PersonalCard() {
         >
             <div className="flex flex-row justify-between w-160 h-17 ml-4">
                 <div className="flex flex-1 items-center gap-3">
-                    <div className="border border-white/20 p-2.5 rounded-md">
+                    <div className="border border-border p-2.5 rounded-md">
                         <Image src="/images/profile.png" alt="profile" width={60} height={60}/>
                     </div>
 
                     <div className="h-full flex flex-col justify-end">
                         <div className="font-semibold text-xl">Pavan</div>
-                        <div className="text-sm text-white/60">
+                        <div className="text-sm text-muted-foreground">
                             Full stack Developer
                         </div>
                     </div>
@@ -53,12 +70,17 @@ export default function PersonalCard() {
                     <button
                       type="button"
                       onClick={toggleTheme}
-                      className="text-white/60 hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-accent-foreground transition-colors"
                       aria-label="Toggle theme"
                     >
                       <SunDimIcon />
                     </button>
-                    <Eye className="text-white/60"/>
+                    <div className="flex items-center gap-1 text-muted-foreground">
+                      <Eye />
+                      <span className="text-xs">
+                        {views === null ? "--" : views.toLocaleString()}
+                      </span>
+                    </div>
                 </div>
             </div>
         </DashedFrame>

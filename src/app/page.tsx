@@ -1,8 +1,10 @@
+import Contactme from "@/components/ui/contactme/contactme";
 import Dots from "@/components/ui/header/dots";
 import Github from "@/components/ui/NameCard/Github";
 import PersonalCard from "@/components/ui/NameCard/PersonalCard";
 import PersonalInfo from "@/components/ui/NameCard/PersonalInfo";
 import ProjectSection from "@/components/ui/projects/project/ProjectSection";
+import { SkillsSection } from "@/components/ui/skills/skills";
 import Image from "next/image";
 
 export default function Home() {
@@ -11,8 +13,10 @@ export default function Home() {
       <Dots/>
       <PersonalCard/>
       <PersonalInfo/>
-      <Github/>
       <ProjectSection/>
+      <SkillsSection/>
+      <Contactme/>
+      <Dots/>
     </div>
   );
 }

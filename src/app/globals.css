@@ -55,6 +55,7 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+  --dashed-color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
 }
 
 .dark {
@@ -108,6 +109,7 @@
   --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
   --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --dashed-color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
 }
 
 @theme inline {
@@ -186,6 +188,48 @@
   transform: translateY(100%);
 }
 
+.bg-striped {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--dashed-color) 0px,
+    var(--dashed-color) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.dashed-divider-v {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--dashed-color) 0px,
+    var(--dashed-color) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+  opacity: 0.45;
+}
+
+.dashed-divider-h {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--dashed-color) 0px,
+    var(--dashed-color) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+  opacity: 0.45;
+}
+
 .signal-bar {
   width: 4px;
   border-radius: 999px;
@@ -250,6 +294,16 @@
   border-radius: 999px;
   background: #22c55e;
   box-shadow: 0 0 10px rgba(34, 197, 94, 0.7), 0 0 14px rgba(250, 204, 21, 0.35);
+}
+
+.signal-radar--building .signal-radar-ring {
+  border-color: rgba(251, 146, 60, 0.8);
+  box-shadow: 0 0 8px rgba(251, 146, 60, 0.35);
+}
+
+.signal-radar--building .signal-radar-dot {
+  background: #f97316;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.75), 0 0 14px rgba(251, 146, 60, 0.4);
 }
 
 @keyframes radar-pulse {

@@ -1,6 +1,9 @@
 import React from "react";
 import DashedFrame from "@/components/ui/DashedFrame";
 import { CalendarDays } from "lucide-react";
+import Github from "./Github";
+import { SiGithub } from "react-icons/si";
+import { SlSocialLinkedin } from "react-icons/sl";
 
 export default function PersonalInfo() {
   return (
@@ -12,23 +15,48 @@ export default function PersonalInfo() {
             >
                 <div className="flex flex-col gap-3 px-2.5">
 
-                <div className="flex flex-col gap-3 text-slate-200">
-                    <span className="font-sans">
-                        Hey, I&apos;m Pavan, a full stack developer who loves building clean, modern websites and apps where design, functionality, and even the smallest details matter, with a focus on making products that are both practical and visually satisfying.
-                    </span>
-                    <span>
-                        Tech stack isn&apos;t my concern, I&apos;m flexible with whatever the project needs, though I prefer modern frameworks and tools. I&apos;m always open for new opportunities to learn and grow.
-                    </span>
-                </div>
-                {/* Contact info */}
-                <div className="flex flex-row gap-3.5">
-                    <div className="w-fit flex items-center bg-nonHover hover:bg-hover transition-colors duration-300 gap-1.5 px-2.5 py-[7px] sm:py-1.5 text-background text-sm font-medium cursor-pointer rounded-[9px] group overflow-hidden bg-white">
-                        <CalendarDays/> Book an intro call
+                    <div className="flex flex-col gap-3 text-foreground">
+                        <span className="font-sans">
+                            Hey, I&apos;m Pavan, a full stack developer who loves building clean, modern websites and apps where design, functionality, and even the smallest details matter, with a focus on making products that are both practical and visually satisfying.
+                        </span>
+                        <span>
+                            Tech stack isn&apos;t my concern, I&apos;m flexible with whatever the project needs, though I prefer modern frameworks and tools. I&apos;m always open for new opportunities to learn and grow.
+                        </span>
                     </div>
-                    <div className="w-fit flex items-center bg-nonHover hover:bg-hover transition-colors duration-300 gap-1.5 px-2.5 py-[7px] sm:py-1.5 text-background text-sm font-medium cursor-pointer rounded-[9px] group overflow-hidden bg-white">
-                        Email me 
+                    {/* Contact info */}
+                    <div className="flex flex-row gap-3.5">
+                        <div className="w-fit flex items-center bg-nonHover hover:bg-hover transition-colors duration-300 gap-1.5 px-2.5 py-[7px] sm:py-1.5 text-background text-sm font-medium cursor-pointer rounded-[9px] group overflow-hidden bg-accent-foreground">
+                            <CalendarDays/> Book an intro call
+                        </div>
+                        <div className="w-fit flex items-center bg-nonHover hover:bg-hover transition-colors duration-300 gap-1.5 px-2.5 py-[7px] sm:py-1.5  text-sm font-medium cursor-pointer rounded-[9px] group overflow-hidden bg-accent-foreground text-background">
+                            Email me 
+                        </div>
                     </div>
-                </div>
+                {/* Contact  */}
+                    <div className="flex flex-col gap-2">
+                        <span>Here are my socials</span>
+                        <div className="flex flex-row gap-3.5">
+                            <a
+                              href="https://github.com/PAVANT009"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="w-fit flex items-center bg-nonHover hover:bg-hover transition-colors duration-300 gap-1.5 px-2.5 py-[7px] sm:py-1.5 text-foreground text-sm font-medium cursor-pointer rounded-[9px] group overflow-hidden bg-muted"
+                            >
+                                <SiGithub/>
+                                <span>Github</span>
+                            </a>
+                            <a
+                              href="https://www.linkedin.com/in/pavan-teja-kumar-65261035b/"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="w-fit flex items-center bg-nonHover hover:bg-hover transition-colors duration-300 gap-1.5 px-2.5 py-[7px] sm:py-1.5 text-foreground text-sm font-medium cursor-pointer rounded-[9px] group overflow-hidden bg-muted"
+                            >
+                                <SlSocialLinkedin/>
+                                <span>Linkedin</span>
+                            </a>
+                        </div>
+                    </div>
+                <Github/>
                 </div>
             </DashedFrame>
         </DashedFrame>

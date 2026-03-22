@@ -11,15 +11,15 @@ export default function Dots() {
     backgroundImage: `
     repeating-linear-gradient(
         to bottom,
-        rgba(255,255,255,0.2) 0px,
-        rgba(255,255,255,0.2) 8px,
+        var(--dashed-color) 0px,
+        var(--dashed-color) 8px,
         transparent 8px,
         transparent 18px
     ),
     repeating-linear-gradient(
         to bottom,
-        rgba(255,255,255,0.2) 0px,
-        rgba(255,255,255,0.2) 8px,
+        var(--dashed-color) 0px,
+        var(--dashed-color) 8px,
         transparent 8px,
         transparent 18px
     )
@@ -34,7 +34,8 @@ export default function Dots() {
       {Array.from({ length: rows * cols }).map((_, i) => (
         <div
           key={i}
-          className="w-1 h-1 rounded-full bg-white/20"
+          className="w-1 h-1 rounded-full"
+          style={{ backgroundColor: "var(--dashed-color)" }}
         />
       ))}
     </div>
