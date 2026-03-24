@@ -2,10 +2,33 @@ import React from "react";
 import DashedFrame from "@/components/ui/DashedFrame";
 import { CalendarDays } from "lucide-react";
 import Github from "./Github";
+import CvMenu from "./CvMenu";
 import { SiGithub } from "react-icons/si";
 import { SlSocialLinkedin } from "react-icons/sl";
 
-export default function PersonalInfo() {
+type CvFile = {
+  name: string;
+  href: string;
+};
+
+export default async function PersonalInfo() {
+  const cvFiles = await (async () => {
+    const { readdir } = await import("node:fs/promises");
+    const path = await import("node:path");
+    const cvDir = path.join(process.cwd(), "public", "cv");
+    const entries = await readdir(cvDir, { withFileTypes: true });
+
+    return entries
+      .filter((entry) => entry.isFile())
+      .map((entry) => entry.name)
+      .filter((name) => name.toLowerCase().endsWith(".pdf"))
+      .sort((a, b) => a.localeCompare(b))
+      .map((name) => ({
+        name,
+        href: `/cv/${name}`,
+      }));
+  })();
+
   return (
    <DashedFrame className="w-full py-2" left={false} right={false}>
             <DashedFrame
@@ -24,7 +47,7 @@ export default function PersonalInfo() {
                         </span>
                     </div>
                     {/* Contact info */}
-                    <div className="flex flex-row gap-3.5">
+                    <div className="flex flex-row flex-wrap gap-3.5">
                         <a
                           href="https://cal.com/pavan-teja-lxgie1"
                           target="_blank"
@@ -39,6 +62,7 @@ export default function PersonalInfo() {
                         >
                             Email me 
                         </a>
+                        <CvMenu files={cvFiles} />
                     </div>
                 {/* Contact  */}
                     <div className="flex flex-col gap-2">

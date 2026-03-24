@@ -1,3 +1,4 @@
+import CertificatesView from "@/components/ui/certificates/certificates-view";
 import Contactme from "@/components/ui/contactme/contactme";
 import Dots from "@/components/ui/header/dots";
 import Github from "@/components/ui/NameCard/Github";
@@ -15,6 +16,7 @@ export default function Home() {
       <PersonalInfo/>
       <ProjectSection/>
       <SkillsSection/>
+      <CertificatesView/>
       <Contactme/>
       <Dots/>
     </div>

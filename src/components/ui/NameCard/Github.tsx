@@ -14,7 +14,7 @@ export default function Github() {
               blockSize={10}
               blockMargin={4}
               fontSize={12}
-              showTotalCount={false}
+              showTotalCount={true}
               // theme={{
               //   light: [
               //     "var(--muted)",

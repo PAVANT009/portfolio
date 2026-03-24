@@ -3,7 +3,7 @@
 import { Eye, SunDimIcon } from "lucide-react";
 import Image from "next/image";
 import DashedFrame from "@/components/ui/DashedFrame";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import React from "react";
 
 export default function PersonalCard() {
@@ -53,20 +53,20 @@ export default function PersonalCard() {
             top={false}
             bottom={false}
         >
-            <div className="flex flex-row justify-between w-150 h-17 ml-4">
+            <div className="flex flex-row justify-between lg:w-150 md:w-70 sm:w-[75%]  h-32 ml-4">
                 <div className="flex flex-1 items-center gap-3">
                     <div className="border border-border p-2.5 rounded-md">
-                        <Image src="/images/profile.png" alt="profile" width={60} height={60}/>
+                        <Image src="/images/profile.png" alt="profile" width={100} height={100}/>
                     </div>
 
-                    <div className="h-full flex flex-col justify-end">
+                    <div className="h-full flex flex-col justify-center gap-3.5">
                         <div className="font-semibold text-xl">Pavan</div>
                         <div className="text-sm text-muted-foreground">
                             Full stack Developer
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col justify-center gap-3.5">
                     <button
                       type="button"
                       onClick={toggleTheme}
