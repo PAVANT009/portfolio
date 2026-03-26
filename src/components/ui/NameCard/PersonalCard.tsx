@@ -55,8 +55,14 @@ export default function PersonalCard() {
         >
             <div className="flex flex-row justify-between lg:w-150 md:w-70 sm:w-[75%]  h-32 ml-4 mb-6">
                 <div className="flex flex-1 items-center gap-3">
-                    <div className="border border-border p-2.5 rounded-md">
-                        <Image src="/images/profile.png" alt="profile" width={100} height={100}/>
+                    <div className="border border-border p-2.5 rounded-md mt-3">
+                        <Image
+                          src="/images/profile.png"
+                          alt="profile"
+                          width={80}
+                          height={80}
+                          className="rounded-md "
+                        />
                     </div>
 
                     <div className="h-full flex flex-col justify-center gap-3.5 mr-3">

@@ -26,7 +26,7 @@ const siteUrl =
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://thispavan.dev");
 
 const siteName = "Pavan Teja Kumar";
-const siteTitle = "Pavan Teja Kumar | Portfolio";
+const siteTitle = "Pavan Teja | Portfolio";
 const siteDescription =
   "Portfolio of Pavan Teja Kumar, a full stack developer building modern web apps with React, Next.js, and Node.js.";
 const structuredData = {
@@ -34,6 +34,7 @@ const structuredData = {
   "@type": "Person",
   name: siteName,
   url: siteUrl,
+  image: `${siteUrl}/images/image%20for%20metadata.png`,
   description: siteDescription,
   jobTitle: "Full Stack Developer",
   sameAs: [
@@ -99,15 +100,22 @@ export const metadata: Metadata = {
     siteName,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/image%20for%20metadata.png",
+        alt: "Pavan Teja Kumar - Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
+    images: ["/images/image%20for%20metadata.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
   },
   manifest: "/manifest.webmanifest",
 };
