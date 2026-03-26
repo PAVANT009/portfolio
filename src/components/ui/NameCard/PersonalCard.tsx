@@ -47,12 +47,13 @@ export default function PersonalCard() {
   };
 
   return (
-   <DashedFrame className="w-full py-2" left={false} right={false} bottom={false}>
+   <DashedFrame className="w-full py-2" left={false} right={false} bottom={false} id="personal-card">
         <DashedFrame
             className="grid grid-cols-[auto_1fr] items-center w-[90%] sm:w-1/2 mx-auto px-2 py-4"
             top={false}
             bottom={false}
         >
+          {/* Cat should not enter  */}
             <div className="flex flex-row justify-between lg:w-150 md:w-70 sm:w-[75%]  h-32 ml-4 mb-6">
                 <div className="flex flex-1 items-center gap-3">
                     <div className="border border-border p-2.5 rounded-md mt-3">
@@ -64,11 +65,15 @@ export default function PersonalCard() {
                           className="rounded-md "
                         />
                     </div>
-
                     <div className="h-full flex flex-col justify-center gap-3.5 mr-3">
-                        <div className="font-semibold text-xl">Pavan</div>
-                        <div className="text-sm text-muted-foreground">
-                            Full stack Developer
+                        <div className="font-semibold text-xl">S.Pavan Teja</div>
+                        <div className="role-switch text-sm text-muted-foreground" aria-live="polite">
+                            <span className="role-switch__item role-switch__item--one">
+                              Full Stack Developer
+                            </span>
+                            <span className="role-switch__item role-switch__item--two">
+                              Software Developer
+                            </span>
                         </div>
                     </div>
                 </div>

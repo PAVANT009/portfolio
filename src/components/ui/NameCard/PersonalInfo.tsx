@@ -72,6 +72,7 @@ export default async function PersonalInfo() {
                               href="https://github.com/PAVANT009"
                               target="_blank"
                               rel="noreferrer"
+                              id="github-link"
                               className="w-fit flex items-center bg-nonHover hover:bg-hover transition-colors duration-300 gap-1.5 px-2.5 py-[7px] sm:py-1.5 text-foreground text-sm font-medium cursor-pointer rounded-[9px] group overflow-hidden bg-muted"
                             >
                                 <SiGithub/>

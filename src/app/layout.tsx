@@ -4,6 +4,7 @@ import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/components/theme-provider";
+import AsciiCat from "@/components/ui/NameCard/AsciiCat";
 
 const instagramSans = localFont({
   variable: "--font-instagram-sans",
@@ -156,6 +157,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <AsciiCat />
           {children}
         </ThemeProvider>
       </body>
