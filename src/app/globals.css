@@ -339,11 +339,15 @@
   font-size: 4px;
   line-height: 0.6;
   white-space: pre;
-  color: color-mix(in oklch, var(--foreground) 92%, transparent);
+  color: color-mix(in oklch, oklch(0.35 0.05 40) 85%, transparent);
   transform: scale(0.5);
   transform-origin: top left;
   transition: transform 180ms ease;
   font-variant-ligatures: none;
+}
+
+.dark .cat-ascii {
+  color: color-mix(in oklch, oklch(0.92 0.02 250) 90%, transparent);
 }
 
 .cat-ascii-wrap--active {

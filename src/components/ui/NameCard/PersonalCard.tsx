@@ -66,7 +66,7 @@ export default function PersonalCard() {
                         />
                     </div>
                     <div className="h-full flex flex-col justify-center gap-3.5 mr-3">
-                        <div className="font-semibold text-xl">S.Pavan Teja</div>
+                        <div className="font-semibold text-xl">S.Pavan Teja Kumar</div>
                         <div className="role-switch text-sm text-muted-foreground" aria-live="polite">
                             <span className="role-switch__item role-switch__item--one">
                               Full Stack Developer
