@@ -58,7 +58,7 @@ export default function PersonalCard() {
                 <div className="flex flex-1 items-center gap-3">
                     <div className="border border-border p-2.5 rounded-md mt-3">
                         <Image
-                          src="/images/profile.png"
+                          src="icon.png"
                           alt="profile"
                           width={80}
                           height={80}
